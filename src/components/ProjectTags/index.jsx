@@ -1,33 +1,26 @@
 import {
-  Tag,
   Box,
   Button,
   Collapse,
   Flex,
-  Input,
+  Icon,
+  Stack,
   Table,
+  Tag,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tr,
   useDisclosure,
   VisuallyHidden,
-  Text,
-  Icon,
-  Stack,
-  Menu,
-  MenuButton,
-  IconButton,
-  MenuList,
-  MenuItem,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaTag } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import TagForm from "./TagForm";
-import { BsThreeDotsVertical } from "react-icons/bs";
 
 const ProjectTags = () => {
   const { isOpen, onToggle } = useDisclosure();

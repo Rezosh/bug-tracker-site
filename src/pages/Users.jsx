@@ -1,7 +1,6 @@
 import {
   Box,
   Heading,
-  IconButton,
   Select,
   Stack,
   Table,
@@ -11,10 +10,8 @@ import {
   Th,
   Thead,
   Tr,
-  VisuallyHidden,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import useSWR from "swr";
 
 const Users = () => {
