@@ -21,7 +21,7 @@ const LoginForm = () => {
   const authContext = useContext(AuthContext);
   const [error, setError] = useState(null);
 
-  // reset error state when user types in the form
+  // reset error state when user types in the for
   const handleChange = () => {
     setError(null);
   };
@@ -46,6 +46,23 @@ const LoginForm = () => {
   const loginDemoUser = async () => {
     const email = "demo@demo.com";
     const password = "demo";
+
+    await sendRequest("/api/auth/login", "POST", {
+      email,
+      password,
+    })
+      .then((response) => {
+        authContext.setAuthState(response);
+        setRedirectOnLogin(true);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  };
+
+  const loginDemoAdmin = async () => {
+    const email = "admin@admin.com";
+    const password = "admin";
 
     await sendRequest("/api/auth/login", "POST", {
       email,
@@ -108,6 +125,12 @@ const LoginForm = () => {
           Log in as{" "}
           <Link onClick={loginDemoUser} color='blue.600' fontWeight='semibold'>
             Demo User
+          </Link>
+        </Text>
+        <Text fontSize='md' textAlign='center'>
+          Log in as{" "}
+          <Link onClick={loginDemoAdmin} color='blue.600' fontWeight='semibold'>
+            Demo Admin
           </Link>
         </Text>
       </Stack>
