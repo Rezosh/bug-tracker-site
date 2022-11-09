@@ -1,6 +1,8 @@
+import { Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
+import EmptyState from "../EmptyState";
 import TicketList from "../TicketList/TicketList";
 
 const ProjectClosedTicketsTable = () => {
@@ -21,13 +23,21 @@ const ProjectClosedTicketsTable = () => {
   };
 
   return (
-    <TicketList
-      data={tickets}
-      pages={pages}
-      handleNext={handleNext}
-      handlePrevious={handlePrevious}
-      page={pageIndex}
-    />
+    <>
+      {tickets.length ? (
+        <TicketList
+          data={tickets}
+          pages={pages}
+          handleNext={handleNext}
+          handlePrevious={handlePrevious}
+          page={pageIndex}
+        />
+      ) : (
+        <Box mt='10'>
+          <EmptyState text='There are currently no closed tickets for this project.' />
+        </Box>
+      )}
+    </>
   );
 };
 

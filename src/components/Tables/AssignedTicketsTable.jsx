@@ -16,7 +16,7 @@ const AssignedTicketsTable = () => {
     setPageIndex(pageIndex - 1);
   };
 
-  return tickets.lenght ? (
+  return tickets.length ? (
     <TicketList
       data={tickets}
       pages={pages}
