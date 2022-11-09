@@ -16,11 +16,6 @@ const MyAssignedTickets = () => {
           </Text>
         </Box>
         <Stack spacing={10}>
-          <Flex
-            direction={{ base: "column", md: "row" }}
-            justify='space-between'>
-            <TicketCreationModal />
-          </Flex>
           <Stack>
             <AssignedTicketsTable />
           </Stack>
