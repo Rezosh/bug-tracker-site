@@ -21,6 +21,8 @@ mkdir frontend
 
 ### Backend
 
+Once cloned dont forget to add your enviroment variables in .env
+
 ```bash
 cd backend
 git clone https://github.com/Rezosh/bug-tracker-api
