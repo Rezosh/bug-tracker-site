@@ -22,7 +22,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import { FaBell, FaPen } from "react-icons/fa";
+import { FaPen } from "react-icons/fa";
 import Details from "./Details";
 import Tags from "./Tags";
 import Assigned from "./Assigned";
@@ -102,14 +102,11 @@ function TicketInfo() {
                     </Text>
                   </Box>
                   <Box>
-                    <HStack spacing={3}>
-                      {isOwnerOrAdmin ? (
-                        <Button leftIcon={<FaPen />} onClick={onOpen}>
-                          Edit
-                        </Button>
-                      ) : null}
-                      <Button leftIcon={<FaBell />}>Subscribe</Button>
-                    </HStack>
+                    {isOwnerOrAdmin ? (
+                      <Button leftIcon={<FaPen />} onClick={onOpen}>
+                        Edit
+                      </Button>
+                    ) : null}
                   </Box>
                 </HStack>
                 <Modal isOpen={isOpen} onClose={onClose}>
@@ -198,14 +195,11 @@ function TicketInfo() {
                 </Text>
               </Box>
               <Box>
-                <HStack spacing={3}>
-                  {isOwnerOrAdmin ? (
-                    <Button leftIcon={<FaPen />} onClick={onOpen}>
-                      Edit
-                    </Button>
-                  ) : null}
-                  <Button leftIcon={<FaBell />}>Subscribe</Button>
-                </HStack>
+                {isOwnerOrAdmin ? (
+                  <Button leftIcon={<FaPen />} onClick={onOpen}>
+                    Edit
+                  </Button>
+                ) : null}
               </Box>
             </Stack>
             <Box mt={8}>
