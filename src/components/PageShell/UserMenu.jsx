@@ -63,10 +63,9 @@ export function UserMenu() {
         <MenuList
           bg={useColorModeValue("white", "gray.900")}
           borderColor={useColorModeValue("gray.200", "gray.700")}>
-          <MenuItem>Profile</MenuItem>
-          <MenuItem>Settings</MenuItem>
-          <MenuDivider />
-          <MenuItem onClick={onClick}>Sign out</MenuItem>
+          <MenuItem onClick={onClick} textColor='red.600'>
+            Sign out
+          </MenuItem>
         </MenuList>
       </Menu>
     </Flex>
